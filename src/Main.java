@@ -23,10 +23,6 @@ public class Main
             int r = random.nextInt(1000);
             
             bst.insertar(r);
-            
-            if (r > 500){
-                System.out.printf("%d : %b\n",r,bst.buscar(r));
-            }
         }
         
         System.out.println(bst.toString());
