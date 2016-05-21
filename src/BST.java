@@ -1,6 +1,3 @@
-
-import javax.xml.transform.OutputKeys;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -30,12 +27,15 @@ public class BST<T extends Comparable<T>>
     {
         return raiz.toString();
     }
-    
+
     public boolean buscar(T x)
     {
         return raiz.buscar(x);
     }
     
+    /******************************************************************************************************************************
+                                                                    Clase Interna
+    *****************************************************************************************************************************/
     private class Nodo
     {
 
@@ -107,13 +107,19 @@ public class BST<T extends Comparable<T>>
             if (this.valor.compareTo(x) == 0){
                 return true;
             }
-            else if (this.nodoDerecho == null && this.nodoIzquierdo == null){
-                return false;
+
+            if (x.compareTo(valor) <= 0){
+                if (nodoIzquierdo == null){
+                    return false;
+                }
+                return nodoIzquierdo.buscar(x);
             }
             else{
-                return nodoIzquierdo.buscar(x) || nodoDerecho.buscar(x);
+                if (nodoDerecho == null){
+                    return false;
+                }
+                return nodoDerecho.buscar(x);
             }
-            
         }
     }
 }

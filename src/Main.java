@@ -10,17 +10,18 @@
  */
 public class Main
 {
+
     public static void main(String[] args)
     {
-        BST<Persona> prueba = new BST();
-        
-        prueba.insertar(new Persona(4, "Matias"));
-        prueba.insertar(new Persona(18, "Cesar"));
-        prueba.insertar(new Persona(7, "Mary"));
-
-        System.out.println(prueba.toString());
-        
-        System.out.println(prueba.buscar(new Persona(7, "Mary")));
-        System.out.println(prueba.buscar(new Persona(10, "Juan")));
+        BST<Integer> bst = new BST<Integer>();
+        bst.insertar(4);
+        bst.insertar(7);
+        bst.insertar(1);
+        bst.insertar(8);
+        bst.insertar(3);
+        bst.insertar(12);
+        System.out.println(bst.toString()); //Salida: 1 3 4 7 8 12
+        System.out.println(bst.buscar(7)); //true
+        System.out.println(bst.buscar(5)); //false
     }
 }
