@@ -5,7 +5,7 @@
  */
 /**
  *
- * @author Syaoran
+ * @author Gabriel Sanhueza & Diego Matus
  */
 public class BST<T extends Comparable<T>>
 {
